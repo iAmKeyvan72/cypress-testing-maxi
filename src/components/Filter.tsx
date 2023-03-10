@@ -1,3 +1,5 @@
+import React from 'react';
+
 function Filter({ onFilterChange }) {
   function filterChangeHandler(event) {
     onFilterChange(event.target.value);
