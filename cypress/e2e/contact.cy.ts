@@ -5,8 +5,12 @@ describe('contact form', () => {
     cy.get('[data-cy="contact-input-name"]').type('K1');
     cy.get('[data-cy="contact-input-email"]').type('k1@mahmoudi.com');
     cy.get('[data-cy="contact-btn-submit"]').as('submitBtn');
-    cy.get('@submitBtn').contains(/send message/i);
-    cy.get('@submitBtn').should('not.have.attr', 'disabled');
+    cy.get('@submitBtn').then((el) => {
+      expect(el.attr('disbaled')).to.be.undefined;
+      expect(el.text()).to.be.equal('Send Message');
+    });
+    // cy.get('@submitBtn').contains(/send message/i);
+    // cy.get('@submitBtn').should('not.have.attr', 'disabled');
     cy.get('@submitBtn').click();
     cy.get('@submitBtn').should('have.attr', 'disabled');
     cy.get('@submitBtn').contains(/sending.../i);
