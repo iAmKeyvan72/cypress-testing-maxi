@@ -33,7 +33,7 @@ describe('tasks management', () => {
     cy.get('.error-message').should('contain.text', 'Please provide');
   });
 
-  it('should filter the tasks', () => {
+  it('should filter tasks', () => {
     cy.visit('http://localhost:5173');
     cy.get('button').contains('Add Task').click();
     cy.get('select#category').select('important');
