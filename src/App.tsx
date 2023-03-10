@@ -1,3 +1,4 @@
+import React from 'react';
 import CourseGoals from './components/CourseGoals';
 import Header from './components/Header';
 

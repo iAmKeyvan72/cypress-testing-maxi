@@ -1,3 +1,4 @@
+import React from 'react';
 import classes from './CourseGoal.module.css';
 
 function CourseGoal({ icon, text }) {
