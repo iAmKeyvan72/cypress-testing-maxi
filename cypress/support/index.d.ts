@@ -7,5 +7,6 @@ declare namespace Cypress {
      * @example cy.submitForm()
      */
     submitForm(): Chainable<Element>;
+    getById(id: string): Chainable<JQuery<HTMLElement>>;
   }
 }
