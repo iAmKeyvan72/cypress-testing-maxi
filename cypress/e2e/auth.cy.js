@@ -25,4 +25,11 @@ describe('auth', () => {
     cy.location('pathname').should('equal', '/takeaways');
     cy.getCookie('__session').its('value').should('not.be.empty');
   });
+
+  it('should logout', () => {
+    cy.login();
+    cy.get('button').contains('Logout').click();
+    cy.location('pathname').should('equal', '/');
+    cy.getCookie('__session').its('value').should('be.empty');
+  });
 });
